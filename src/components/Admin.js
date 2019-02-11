@@ -30,8 +30,24 @@ class Admin extends Component {
         })
     }
 
-    authenticate = () => {
+    authenticate_facebook = () => {
         const authProvider = new firebase.auth.FacebookAuthProvider()
+        firebaseApp
+            .auth()
+            .signInWithPopup(authProvider)
+            .then(this.handleAuth)
+    }
+
+    authenticate_google = () => {
+        const authProvider = new firebase.auth.GoogleAuthProvider()
+        firebaseApp
+            .auth()
+            .signInWithPopup(authProvider)
+            .then(this.handleAuth)
+    }
+
+    authenticate_twitter = () => {
+        const authProvider = new firebase.auth.TwitterAuthProvider()
         firebaseApp
             .auth()
             .signInWithPopup(authProvider)
@@ -51,7 +67,7 @@ class Admin extends Component {
 
         // if user don't connect
         if (!this.state.uid) {
-            return <Login authenticate={this.authenticate}/>
+            return <Login authenticate_facebook={this.authenticate_facebook} authenticate_google={this.authenticate_google} authenticate_twitter={this.authenticate_twitter}/>
         }
 
         if (this.state.uid !== this.state.chef) {

@@ -223,12 +223,16 @@ footer {
 	margin: 0 auto 20px auto;
 }
 
-.facebook-button {
-	background-color: #3b5998;
+.google-button {
+	background-color: #000000;
 }
 
 .twitter-button {
 	background-color: #00aced;
+}
+
+.facebook-button {
+	background-color: #3b5998;
 }
 
 /* ----------------------------
