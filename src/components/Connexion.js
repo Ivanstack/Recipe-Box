@@ -32,6 +32,7 @@ class Connexion extends Component {
             onChange={this.handleChange}
             placeholder='Nom du Chef'
             pattern='[A-Za-z-]{1,}{-,}'
+            maxLength="20"
             required />
           <button type='submit'>GO</button>
           <p>Pas de caractères spéciaux</p>
