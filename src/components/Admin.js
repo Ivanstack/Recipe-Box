@@ -77,7 +77,7 @@ class Admin extends Component {
                 }
                 <footer>
                     {logout}
-                    <button onClick={chargerExemple}>Remplir</button>
+                    <button onClick={chargerExemple}>Ajouter les recettes par défault</button>
                 </footer>
             </div>
         )
