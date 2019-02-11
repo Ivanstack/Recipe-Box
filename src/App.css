@@ -33,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #fff;
 	border-width: 0 0 5px 0;
 	outline: none;
+	text-align: center;
 }
 button {
 	font-size: 20px;

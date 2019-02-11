@@ -34,7 +34,7 @@ class Connexion extends Component {
             pattern='[A-Za-z-]{1,}'
             required />
           <button type='submit'>GO</button>
-          <p>Pas de caractères spéciaux.</p>
+          <p>Pas de caractères spéciaux</p>
         </form>
       </div>
     )
