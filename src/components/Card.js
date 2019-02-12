@@ -12,7 +12,7 @@ const Card = ({ details }) => {
 
     const requireImage = chemin => {
         try {
-            return require(`../img/${chemin}`)
+            return require(`../img/${chemin}.jpeg`)
         }
         catch (err) {
             return require(`../img/default.jpeg`) 
