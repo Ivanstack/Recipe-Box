@@ -3,7 +3,8 @@ import './App.css'
 import Header from './components/Header'
 import recettes from './recettes'
 import Admin from './components/Admin'
-import Card from './components/Card';
+import Card from './components/Card'
+import home_logo from './components/logo/home.png'
 
 // Firebase
 import base from './conf-firebase'
@@ -52,6 +53,7 @@ class App extends Component {
 
     return (
       <div className='box'>
+        <a className="home-button" href="/"><img src={home_logo} alt="home-button"/></a>
         <Header pseudo={this.state.pseudo}></Header>
         <div className='cards'>
           {cards}
@@ -63,6 +65,7 @@ class App extends Component {
           majRecette={this.majRecette}
           supprimerRecette={this.supprimerRecette}
           chargerExemple={this.chargerExemple}/>
+        <a className='report-problem' href="mailto:contact@yoanndelattre.com">Report a Problem</a>
       </div>
     )
   }

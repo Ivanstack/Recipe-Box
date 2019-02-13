@@ -37,6 +37,7 @@ class Connexion extends Component {
           <button type='submit'>GO</button>
           <p>Pas de caractères spéciaux</p>
         </form>
+        <a className='report-problem' href="mailto:contact@yoanndelattre.com">Report a Problem</a>
       </div>
     )
   }
