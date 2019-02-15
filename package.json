@@ -5,7 +5,6 @@
   "homepage": "/",
   "dependencies": {
     "firebase": "^5.8.2",
-    "prop-types": "^15.6.2",
     "re-base": "^4.0.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
