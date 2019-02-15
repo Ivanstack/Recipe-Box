@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = ({ details, default_img }) => {
+const Card = ({ details }) => {
 
     const ingredients = details.ingredients
         .split(',')
