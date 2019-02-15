@@ -11,12 +11,7 @@ const Card = ({ details }) => {
         .map(item => <li key={item}>{item}</li>)
 
     const requireImage = chemin => {
-        try {
-            return require(`../img/${chemin}.jpeg`)
-        }
-        catch (err) {
-            return require(`../img/default.jpeg`) 
-        }
+        return (`${chemin}`)
     }
 
     return (
