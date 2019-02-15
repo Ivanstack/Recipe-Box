@@ -10,14 +10,10 @@ const Card = ({ details }) => {
         .split('\n')
         .map(item => <li key={item}>{item}</li>)
 
-    const requireImage = chemin => {
-        return (`${chemin}`)
-    }
-
     return (
         <div className="card">
             <div className="image">
-                <img src={requireImage(details.image)} alt={details.nom}/>
+                <img src={(details.image)} alt={details.nom}/>
             </div>
             <div className="recette">
                 <h2>{details.nom}</h2>
