@@ -37,7 +37,7 @@ class Connexion extends Component {
           <button type='submit'>GO</button>
           <p>Pas de caractères spéciaux</p>
         </form>
-        <a className='report-problem' href="https://github.com/yoanndelattre/Recipe-Box/issues">Report a Problem</a>
+        <a className='report-problem' target="blank" href="https://github.com/yoanndelattre/Recipe-Box/issues">Report a Problem</a>
       </div>
     )
   }
