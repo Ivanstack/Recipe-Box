@@ -65,7 +65,7 @@ class App extends Component {
           majRecette={this.majRecette}
           supprimerRecette={this.supprimerRecette}
           chargerExemple={this.chargerExemple}/>
-        <a className='report-problem' href="mailto:contact@yoanndelattre.com">Report a Problem</a>
+        <a className='report-problem' href="https://github.com/yoanndelattre/Recipe-Box/issues">Report a Problem</a>
       </div>
     )
   }
