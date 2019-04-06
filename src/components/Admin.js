@@ -54,14 +54,6 @@ class Admin extends Component {
             .then(this.handleAuth)
     }
 
-    authenticate_twitter = () => {
-        const authProvider = new firebase.auth.TwitterAuthProvider()
-        firebaseApp
-            .auth()
-            .signInWithPopup(authProvider)
-            .then(this.handleAuth)
-    }
-
     logout = async () => {
         await firebase.auth().signOut()
         this.setState({ uid: null })
@@ -75,7 +67,7 @@ class Admin extends Component {
 
         // if user don't connect
         if (!this.state.uid) {
-            return <Login authenticate_facebook={this.authenticate_facebook} authenticate_google={this.authenticate_google} authenticate_twitter={this.authenticate_twitter}/>
+            return <Login authenticate_facebook={this.authenticate_facebook} authenticate_google={this.authenticate_google}/>
         }
 
         if (this.state.uid !== this.state.chef) {

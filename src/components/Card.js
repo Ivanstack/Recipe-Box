@@ -13,7 +13,7 @@ const Card = ({ details }) => {
     return (
         <div className="card">
             <div className="image">
-                <img src={(details.image)} alt={details.nom} onError={(e) => {e.target.src = 'https://firebasestorage.googleapis.com/v0/b/recipe-box-cb02c.appspot.com/o/default.jpeg?alt=media&token=3b0cbc24-a561-4b4f-aaa0-7e49dd2c2a8b'}} />
+                <img src={(details.image)} alt={details.nom} onError={(e) => {e.target.src = 'https://firebasestorage.googleapis.com/v0/b/recipe-box-236817.appspot.com/o/default.jpeg?alt=media&token=73d7df86-852a-4436-a89a-b09d78673db1'}} />
             </div>
             <div className="recette">
                 <h2>{details.nom}</h2>
