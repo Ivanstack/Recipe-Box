@@ -15,3 +15,11 @@ steps:
 - id: "Sync static files in bucket"
   name: 'gcr.io/cloud-builders/gsutil'
   args: ['-m', 'rsync', '-d', '-r', './build/', 'gs://website_recipe-box-builded/']
+
+- id: "Download git repo for config App Engine"
+  name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://source.developers.google.com/p/recipe-box-236817/r/Config-App-Engine-Recipe-Box']
+  
+- id: "DEPLOY ON APP ENGINE"
+  name: 'gcr.io/cloud-builders/gcloud'
+  args: ['builds', 'submit', '--config', './Config-App-Engine-Recipe-Box/master/cloudbuildDeploy.yaml', './Config-App-Engine-Recipe-Box/']
