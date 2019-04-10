@@ -16,18 +16,26 @@ steps:
   name: 'gcr.io/cloud-builders/npm'
   args: ['install']
 
-- id: "build static files"
+- id: "Build static files"
   name: 'gcr.io/cloud-builders/npm'
   args: ['run', 'build']
 
-- id: "Sync static files in bucket"
-  name: 'gcr.io/cloud-builders/gsutil'
-  args: ['-m', 'rsync', '-d', '-r', './build/', 'gs://website_recipe-box-builded/']
-
-- id: "Download git repo for config App Engine"
+- id: "Download Express server"
   name: 'gcr.io/cloud-builders/git'
-  args: ['clone', 'https://source.developers.google.com/p/recipe-box-236817/r/Config-App-Engine-Recipe-Box']
-  
-- id: "DEPLOY ON APP ENGINE"
+  args: ['clone', 'https://source.developers.google.com/p/recipe-box-236817/r/github_yoanndelattre_express-server-gcp', './master/github_yoanndelattre_express-server-gcp']
+
+- id: "Create app_files folder"
+  name: 'ubuntu'
+  args: ['bash', './master/github_yoanndelattre_express-server-gcp/deploy/CreateFolderApp.sh']
+
+- id: "Move Website Recipe-Box Project folder"
+  name: 'gcr.io/cloud-builders/gsutil'
+  args: ['rsync', '-d', '-r', './build/.', './master/github_yoanndelattre_express-server-gcp/app_files/']
+
+- id: "Move WebsiteRecipeBoxConfigAppEngine.yaml in github_yoanndelattre_express-server-gcp folder"
+  name: 'gcr.io/cloud-builders/gsutil'
+  args: ['mv', './deploy/WebsiteRecipeBoxConfigAppEngine.yaml', './master/github_yoanndelattre_express-server-gcp/']
+
+- id: "DEPLOY APP ENGINE"
   name: 'gcr.io/cloud-builders/gcloud'
-  args: ['builds', 'submit', '--config', './Config-App-Engine-Recipe-Box/master/cloudbuildDeploy.yaml', './Config-App-Engine-Recipe-Box/']
+  args: ['app', 'deploy', './master/github_yoanndelattre_express-server-gcp/WebsiteRecipeBoxConfigAppEngine.yaml', './deploy/dispatch.yaml', '--version=1']
