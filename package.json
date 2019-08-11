@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "/",
   "dependencies": {
-    "firebase": "^6.3.4",
+    "firebase": "^6.3.5",
     "re-base": "^4.0.0",
     "react": "^16.8.6",
     "react-cookie-banner": "^4.0.0",
