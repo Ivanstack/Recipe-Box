@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /pseudo
+Disallow: /pseudo/
+Allow: /
+
+# Sitemap files
+Sitemap: https://recette.yoanndelattre.com/sitemap.xml
