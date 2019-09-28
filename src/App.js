@@ -7,7 +7,6 @@ import Card from './components/Card'
 import home_logo from './components/logo/home.png'
 import CookieAlert from './Cookie-Alert'
 
-// Firebase
 import base from './conf-firebase'
 
 class App extends Component {
