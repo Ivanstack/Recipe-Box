@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-// Pages
 import App from './App'
 import Connexion from './components/Connexion'
 import NotFound from './components/NotFound'
